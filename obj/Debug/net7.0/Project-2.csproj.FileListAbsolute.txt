@@ -1,0 +1,15 @@
+C:\Users\zenon\Documents\GitHub\Project-2\bin\Debug\net7.0\Project-2.exe
+C:\Users\zenon\Documents\GitHub\Project-2\bin\Debug\net7.0\Project-2.deps.json
+C:\Users\zenon\Documents\GitHub\Project-2\bin\Debug\net7.0\Project-2.runtimeconfig.json
+C:\Users\zenon\Documents\GitHub\Project-2\bin\Debug\net7.0\Project-2.dll
+C:\Users\zenon\Documents\GitHub\Project-2\bin\Debug\net7.0\Project-2.pdb
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.csproj.AssemblyReference.cache
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.AssemblyInfoInputs.cache
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.AssemblyInfo.cs
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.csproj.CoreCompileInputs.cache
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.dll
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\refint\Project-2.dll
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.pdb
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\Project-2.genruntimeconfig.cache
+C:\Users\zenon\Documents\GitHub\Project-2\obj\Debug\net7.0\ref\Project-2.dll
