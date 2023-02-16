@@ -1,24 +1,65 @@
 namespace Program2
 {
-    public class Game
+    public static class Game
     {
+        public static bool promp(Player player)
+        {
+            bool cont;
+            char input = Console.ReadLine()[0];
+            if(input == 'y' || input == 'Y')
+            {
+                player.life = 6;
+                cont = true;
+            }
+            else 
+            {
+                cont = false;
+            }
+            return cont;
+        }
         public static void gameEngine(string user)
         {
             //vars and class declare
             Boolean cont = true;
-            Random rnd = new Random();
             //convert .txt into array 
-            string[] lines = System.IO.File.ReadAllLines(@"words.txt");
             //set up of 'game engine'
             while(cont)
             {
-                //Get a random word from lines array 
-                string word = lines[rnd.Next(lines.Length)];
-                char[] guessed = Puzzle.createCharArr(word);
-                Puzzle.PrintGuess(guessed);
-                // Console.Write("Enter letter to guess: ");
-                // guess = Console.ReadLine()[0];
-                cont = false;
+                Player player = new Player();
+                //Initialize game
+                var word = Puzzle.wordGen();
+                char[] letters = Puzzle.createWordArr(word);
+                char[] guessed = Puzzle.createGuessArr(letters);
+                char[] wrong = new char[6];
+                //play
+                while(player.life != 0 && Puzzle.victoryCheck(letters,guessed) == false)
+                {
+                    //Ask for user input,  
+                    Console.WriteLine("-------------------------------");
+                    Console.WriteLine("Guess this word: ");
+                    Puzzle.PrintArr(guessed);
+                    Console.WriteLine();
+                    Console.Write("Wrong inputs so far: ");
+                    Puzzle.PrintArr(wrong);
+                    Console.WriteLine();
+                    Console.Write("Enter letter to guess: ");
+                    char guess = Console.ReadLine()[0];
+                    if(Puzzle.check(guess, guessed, letters) == false)
+                    {
+                        player.life -= 1;
+                        wrong[player.life] = guess;
+                    }
+                }
+                if(player.life == 0)
+                {
+                    Console.WriteLine("Looks like you lost, care to play again? (Y/N): ");
+                    cont = Game.promp(player);
+                }
+                else
+                {
+                    Console.WriteLine("Looks like you won! Care to play again? (Y/N): ");
+                    cont = Game.promp(player);
+                }
             }
         }
     }

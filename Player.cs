@@ -2,7 +2,7 @@ namespace Program2
 {
     public class Player
     {
-        int life = 6; 
+        public int life = 6; 
         string user;
         public static string createUser()
         {
@@ -14,7 +14,7 @@ namespace Program2
             if(string.IsNullOrEmpty(player.user))
             {
                 Console.WriteLine("Setting default name...");
-                player.user = "User";
+                player.user = "NoNameJane";
             }
             //great user
             Console.WriteLine("Hello " + player.user + "!");
