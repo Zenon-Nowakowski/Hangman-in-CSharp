@@ -17,7 +17,7 @@ namespace Program2
             }
             return cont;
         }
-        public static void gameEngine(string user)
+        public static void gameEngine(Player player)
         {
             //vars and class declare
             Boolean cont = true;
@@ -25,7 +25,6 @@ namespace Program2
             //set up of 'game engine'
             while(cont)
             {
-                Player player = new Player();
                 //Initialize game
                 var word = Puzzle.wordGen();
                 char[] letters = Puzzle.createWordArr(word);
@@ -52,11 +51,13 @@ namespace Program2
                 }
                 if(player.life == 0)
                 {
+                    player.gameslost += 1;
                     Console.WriteLine("Looks like you lost, care to play again? (Y/N): ");
                     cont = Game.promp(player);
                 }
                 else
                 {
+                    player.gameswon += 1;
                     Console.WriteLine("Looks like you won! Care to play again? (Y/N): ");
                     cont = Game.promp(player);
                 }

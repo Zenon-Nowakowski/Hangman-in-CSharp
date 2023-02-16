@@ -3,22 +3,20 @@ namespace Program2
     public class Player
     {
         public int life = 6; 
-        string user;
-        public static string createUser()
+        public string user;
+        public DateTime date;
+        public int gameswon;
+        public int gameslost;
+        public decimal winpercent;
+        public Player(string user, DateTime date, int gameswon, int gameslost, decimal winpercent)
         {
-            Player player = new Player();
-            //Create user
-            Console.WriteLine("Please input username: ");
-            //get username, if none provided, set default: User
-            player.user = Console.ReadLine();
-            if(string.IsNullOrEmpty(player.user))
-            {
-                Console.WriteLine("Setting default name...");
-                player.user = "NoNameJane";
-            }
-            //great user
-            Console.WriteLine("Hello " + player.user + "!");
-            return player.user;
+            this.user = user; 
+            this.date = date; 
+            this.gameswon = gameswon;
+            this.gameslost = gameslost;
+            this.winpercent = winpercent;
         }
+        public Player()
+        {}
     }
 }
