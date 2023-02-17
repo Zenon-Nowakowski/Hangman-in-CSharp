@@ -4,6 +4,7 @@ namespace Program2
     {
         public static string wordGen()
         {
+            //get a random word from txt file 
             var lines = System.IO.File.ReadAllLines(@"words.txt");
             Random rnd = new Random();
             string word = lines[rnd.Next(lines.Length)];
@@ -19,7 +20,7 @@ namespace Program2
         {
             //set up array of guesses, fills on success
             var guessed = new char[letters.Length];
-            //Fill guessed with defualt vals
+            //Fill guessed with defualt vals, '_'
             for(int i = 0; i < letters.Length;i++)
             {
                 guessed[i] = '_';
@@ -35,6 +36,7 @@ namespace Program2
         }
         public static bool check(char guess, char[] guessed, char[] letters)
         {
+            //compares the users input with the array of letters, if correct fills out guessed array, otherwise it returns false, and allows for lose of life
             var correct = false;
             for(int i = 0; i < letters.Length; i++)
             {
@@ -48,6 +50,7 @@ namespace Program2
         }
         public static bool victoryCheck(char[] letters, char[] guessed)
         {
+            //compares guessed array with letters array, if both are the exact same, returns true, aka. victory condition met
             bool victory = true;
             for(int i = 0; i < letters.Length; i++)
             {

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <life>6</life>
-  <user>ero</user>
-  <date>2023-02-16T00:00:00-06:00</date>
-  <gameswon>1</gameswon>
-  <gameslost>0</gameslost>
-  <winpercent>100</winpercent>
-</Player>

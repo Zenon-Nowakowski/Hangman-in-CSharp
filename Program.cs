@@ -1,21 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Xml.Serialization;
 
 namespace Program2
 {
     class Program
     {
-        static void toXML(Player player)
-        {
-            XmlSerializer xs = new XmlSerializer(typeof(Player));  
-            string path = "userrdata.xml";
-            TextWriter txtWriter = new StreamWriter(@path);
-            
-            xs.Serialize(txtWriter, player);  
-        
-            txtWriter.Close();
-        }
         //vars and classes declare
         static void Main(string[] args)
         {
@@ -28,20 +17,17 @@ namespace Program2
                 Console.WriteLine("Setting default name...");
                 user = "NoNameJane";
             }
+            //define player class, class instantiations
             Player player = new Player
             (
                 user,
-                DateTime.Today,
                 0,
                 0,
                 0
             );
-            //great user
+            //create user
             Console.WriteLine("Hello " + player.user + "!");
-            Game.gameEngine(player);
-            player.winpercent = player.gameswon / (player.gameslost+player.gameswon) * 100;
-            Console.WriteLine(player.winpercent);
-            Program.toXML(player);
+            Play.gameEngine(player);
         }
     }
 }
