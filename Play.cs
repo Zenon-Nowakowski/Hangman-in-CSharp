@@ -7,11 +7,10 @@ namespace Program2
     {
         static void toXML(Player player, List<Game> gamelist)
         {
-            Random rnd = new Random();
             XmlSerializer pl = new XmlSerializer(typeof(Player));
             XmlSerializer g = new XmlSerializer(typeof(Game));
             //ensure that a new document is created, with users name and a random number
-            string path = player.user + "s_data" + rnd.Next(5000) + ".xml";
+            string path = player.user + "s_data.xml";
             TextWriter writer = new StreamWriter(@path);
             pl.Serialize(writer, player);
             foreach(var game in gamelist)

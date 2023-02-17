@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <life>6</life>
-  <user>tester</user>
-  <gameswon>3</gameswon>
+  <user>Zenon</user>
+  <gameswon>4</gameswon>
   <gameslost>0</gameslost>
   <winpercent>100</winpercent>
 </Player><?xml version="1.0" encoding="utf-8"?>
 <Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <date>2023-02-17T00:00:00-06:00</date>
-  <phrase>e</phrase>
+  <phrase>sorry dude that was hard</phrase>
+  <win>true</win>
 </Game><?xml version="1.0" encoding="utf-8"?>
 <Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <date>2023-02-17T00:00:00-06:00</date>
-  <phrase>e</phrase>
+  <phrase>the fox went in the hole</phrase>
+  <win>true</win>
 </Game><?xml version="1.0" encoding="utf-8"?>
 <Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <date>2023-02-17T00:00:00-06:00</date>
-  <phrase>e</phrase>
+  <phrase>the fox went in the hole</phrase>
+  <win>true</win>
+</Game><?xml version="1.0" encoding="utf-8"?>
+<Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <date>2023-02-17T00:00:00-06:00</date>
+  <phrase>the brown bear is happy</phrase>
+  <win>true</win>
 </Game>
