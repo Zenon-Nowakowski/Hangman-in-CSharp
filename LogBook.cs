@@ -4,12 +4,14 @@ namespace Program2
     {
         public DateTime date;
         public string phrase;
+        public bool win;
 
         //constructor 
-        public Game(DateTime date, string phrase)
+        public Game(DateTime date, string phrase, bool win)
         {
             this.date = date; 
             this.phrase = phrase;
+            this.win = win;
         }
         //xml export constructor
         public Game()

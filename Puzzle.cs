@@ -20,10 +20,17 @@ namespace Program2
         {
             //set up array of guesses, fills on success
             var guessed = new char[letters.Length];
-            //Fill guessed with defualt vals, '_'
+            //Fill guessed with defualt vals, '_' if space, fill with space
             for(int i = 0; i < letters.Length;i++)
             {
-                guessed[i] = '_';
+                if(letters[i] == ' ')
+                {
+                   guessed[i] = ' '; 
+                }
+                else
+                {
+                    guessed[i] = '_';
+                }
             }
             return guessed;
         }

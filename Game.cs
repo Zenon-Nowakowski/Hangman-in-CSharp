@@ -53,12 +53,6 @@ namespace Program2
                 char[] guessed = Puzzle.createGuessArr(letters);
                 //create an array for wrong entries, since players have 6 lives, they can only get 6 things wrong 
                 char[] wrong = new char[6];
-                //create a game object in gamelist, track word and date of attempt
-                gameslist.Add(new Game
-                (
-                    DateTime.Today,
-                    word
-                ));
                 //play, also set victory conditions, if playerlife reaches zero, or if the puzzle is solved
                 while(player.life != 0 && Puzzle.victoryCheck(letters,guessed) == false)
                 {
@@ -81,10 +75,22 @@ namespace Program2
                         wrong[player.life] = guess;
                     }
                 }
+                Console.WriteLine("-------------------------------");
+                Console.WriteLine("The correct phrase was: ");
+                Puzzle.PrintArr(letters);
+                Console.WriteLine();
+                Console.WriteLine("-------------------------------");
                 //loose messasge, update loss score 
                 if(player.life == 0)
                 {
                     player.gameslost += 1;
+                    //create a game object in gamelist, track word and date of attempt, win=false
+                    gameslist.Add(new Game
+                    (
+                        DateTime.Today,
+                        word,
+                        false
+                    ));
                     Console.WriteLine("Looks like you lost, care to play again? (Y/N): ");
                     cont = Play.promp(player);
                 }
@@ -92,6 +98,13 @@ namespace Program2
                 else
                 {
                     player.gameswon += 1;
+                    //create a game object in gamelist, track word and date of attempt, win=true
+                    gameslist.Add(new Game
+                    (
+                        DateTime.Today,
+                        word,
+                        true
+                    ));
                     Console.WriteLine("Looks like you won! Care to play again? (Y/N): ");
                     cont = Play.promp(player);
                 }
