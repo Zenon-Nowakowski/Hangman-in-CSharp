@@ -44,10 +44,10 @@ namespace Program2
             while(cont)
             {
                 //Initialize game
-                //generate random word
-                var word = Puzzle.wordGen();
-                //split word into a char array 
-                char[] letters = Puzzle.createWordArr(word);
+                //generate random phrase
+                var phrase = Puzzle.phraseGen();
+                //split phrase into a char array 
+                char[] letters = Puzzle.createphraseArr(phrase);
                 //create an array for 'guesses'
                 char[] guessed = Puzzle.createGuessArr(letters);
                 //create an array for wrong entries, since players have 6 lives, they can only get 6 things wrong 
@@ -57,7 +57,7 @@ namespace Program2
                 {
                     //display the empty guesses array, format for easier reading by user 
                     Console.WriteLine("-------------------------------");
-                    Console.WriteLine("Guess this word: ");
+                    Console.WriteLine("Guess this phrase: ");
                     Puzzle.PrintArr(guessed);
                     Console.WriteLine();
                     //spit out wrong inputs user has input thus far, display life 
@@ -66,13 +66,21 @@ namespace Program2
                     Console.WriteLine();
                     //ask for user input 
                     Console.Write("Enter letter to guess: ");
-                    char guess = Console.ReadLine()[0];
-                    //subtract a life if incorrect guess, display incorrect letter in wrong array 
-                    if(Puzzle.check(guess, guessed, letters) == false)
+                    try
                     {
-                        player.life -= 1;
-                        wrong[player.life] = guess;
+                        char guess = Console.ReadLine()[0];
+                        //subtract a life if incorrect guess, display incorrect letter in wrong array 
+                        if(Puzzle.check(guess, guessed, letters) == false)
+                        {
+                            player.life -= 1;
+                            wrong[player.life] = guess;
+                        }
                     }
+                    catch(IndexOutOfRangeException)
+                    {
+                        Console.WriteLine("OUT OF BOUNDS, DO NOT ENTER NULL VALUES!!! ");
+                    }
+
                 }
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("The correct phrase was: ");
@@ -83,11 +91,11 @@ namespace Program2
                 if(player.life == 0)
                 {
                     player.gameslost += 1;
-                    //create a game object in gamelist, track word and date of attempt, win=false
+                    //create a game object in gamelist, track phrase and date of attempt, win=false
                     gameslist.Add(new Game
                     (
                         DateTime.Today,
-                        word,
+                        phrase,
                         false
                     ));
                     Console.WriteLine("Looks like you lost, care to play again? (Y/N): ");
@@ -97,11 +105,11 @@ namespace Program2
                 else
                 {
                     player.gameswon += 1;
-                    //create a game object in gamelist, track word and date of attempt, win=true
+                    //create a game object in gamelist, track phrase and date of attempt, win=true
                     gameslist.Add(new Game
                     (
                         DateTime.Today,
-                        word,
+                        phrase,
                         true
                     ));
                     Console.WriteLine("Looks like you won! Care to play again? (Y/N): ");

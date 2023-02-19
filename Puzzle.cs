@@ -2,18 +2,18 @@ namespace Program2
 {
     public class Puzzle
     {
-        public static string wordGen()
+        public static string phraseGen()
         {
-            //get a random word from txt file 
-            var lines = System.IO.File.ReadAllLines(@"words.txt");
+            //get a random phrase from txt file 
+            var lines = System.IO.File.ReadAllLines(@"phrases.txt");
             Random rnd = new Random();
-            string word = lines[rnd.Next(lines.Length)];
-            return word;
+            string phrase = lines[rnd.Next(lines.Length)];
+            return phrase;
         }
-        public static char[] createWordArr(string word)
+        public static char[] createphraseArr(string phrase)
         {
-            //convert word into array of letters
-            var letters = word.ToCharArray();
+            //convert phrase into array of letters
+            var letters = phrase.ToCharArray();
             return letters;
         }
         public static char[] createGuessArr(char[] letters)
